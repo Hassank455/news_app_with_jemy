@@ -2,8 +2,9 @@ import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_with_jemy/core/utils/color.dart';
-import 'package:news_app_with_jemy/views/layout/cubit/cubit.dart';
-import 'package:news_app_with_jemy/views/layout/cubit/states.dart';
+import 'package:news_app_with_jemy/views/home/states/states.dart';
+
+import 'controllers/controllers.dart';
 
 class LayoutScreen extends StatelessWidget {
   const LayoutScreen({Key? key}) : super(key: key);

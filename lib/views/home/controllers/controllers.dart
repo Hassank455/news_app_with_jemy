@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_with_jemy/views/business/business_screen.dart';
 import 'package:news_app_with_jemy/views/health/health_screen.dart';
-import 'package:news_app_with_jemy/views/layout/cubit/states.dart';
+import 'package:news_app_with_jemy/views/home/states/states.dart';
+
 import 'package:news_app_with_jemy/views/science/science_screen.dart';
 import 'package:news_app_with_jemy/views/sports/sports_screen.dart';
 

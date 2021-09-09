@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:news_app_with_jemy/core/utils/color.dart';
-import 'package:news_app_with_jemy/views/business/business_screen.dart';
-import 'package:news_app_with_jemy/views/layout/layout_screen.dart';
+
+import 'package:news_app_with_jemy/views/home/home_view.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
