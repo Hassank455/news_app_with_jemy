@@ -21,12 +21,12 @@ void main() async {
   await CacheHelper.init();
   Widget? widget;
 
-  bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
-  if (onBoarding != null) {
-    widget = LayoutScreen();
-  } else {
-    widget = SplashScreen();
-  }
+  //bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
+  // if (onBoarding != null) {
+  //   widget = LayoutScreen();
+  // } else {
+  widget = SplashScreen();
+  //}
   runApp(MyApp(
     startWidget: widget,
   ));
