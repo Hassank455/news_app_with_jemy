@@ -18,7 +18,7 @@ class NewsModel {
 
   String? status;
   int? totalResults;
-  List<Article>? articles;
+  List<Article>? articles = [];
 
   factory NewsModel.fromJson(Map<String, dynamic> json) => NewsModel(
     status: json["status"],

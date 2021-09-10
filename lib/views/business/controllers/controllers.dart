@@ -12,7 +12,7 @@ class BusinessCubit extends Cubit<BusinessStates>{
 
   static BusinessCubit get(context) => BlocProvider.of(context);
 
-  List<dynamic> business = [];
+ // List<dynamic> business = [];
 
   NewsModel? newsModelBusiness;
 
@@ -29,7 +29,7 @@ class BusinessCubit extends Cubit<BusinessStates>{
       },
     ).then((value)
     {
-      business = value.data['articles'];
+      //business = value.data['articles'];
       print('##########################');
       //print(business[0]['title']);
       newsModelBusiness = NewsModel.fromJson(value.data);

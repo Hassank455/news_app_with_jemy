@@ -24,7 +24,9 @@ void main() async {
   } else {
     widget = SplashScreen();
   }
-  runApp(MyApp(startWidget: widget,));
+  runApp(MyApp(
+    startWidget: widget,
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -33,6 +35,7 @@ class MyApp extends StatelessWidget {
   MyApp({
     this.startWidget,
   });
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
