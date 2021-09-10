@@ -21,7 +21,13 @@ class _SplashScreenState extends State<SplashScreen> {
         value: true,
       ).then((value) {
         if (value) {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutScreen()));
+          // Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutScreen()));
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LayoutScreen(),
+              ),
+              (route) => false);
         }
       });
     });
