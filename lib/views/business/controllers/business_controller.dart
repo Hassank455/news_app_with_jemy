@@ -5,30 +5,28 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_with_jemy/core/models/news_model.dart';
 import 'package:news_app_with_jemy/core/remote/dio_helper.dart';
 import 'package:news_app_with_jemy/core/utils/contants.dart';
-import 'package:news_app_with_jemy/views/business/states/states.dart';
+import 'package:news_app_with_jemy/views/business/states/business_states.dart';
 
-class BusinessCubit extends Cubit<BusinessStates>{
+class BusinessCubit extends Cubit<BusinessStates> {
   BusinessCubit() : super(InitialBusinessState());
 
   static BusinessCubit get(context) => BlocProvider.of(context);
 
- // List<dynamic> business = [];
+  // List<dynamic> business = [];
 
   NewsModel? newsModelBusiness;
 
-  void getBusiness(){
+  void getBusiness() {
     emit(NewsGetBusinessLoadingState());
 
     DioHelper.getData(
       url: 'v2/top-headlines',
-      query:
-      {
-        'country':'us',
-        'category':'business',
+      query: {
+        'country': 'us',
+        'category': 'business',
         'apiKey': apiKey,
       },
-    ).then((value)
-    {
+    ).then((value) {
       //business = value.data['articles'];
       print('##########################');
       //print(business[0]['title']);
@@ -36,19 +34,17 @@ class BusinessCubit extends Cubit<BusinessStates>{
       print(value.data.toString());
       //newsModelBusiness = NewsModel.fromJson(json.decode(value.data.toString()));
       //var s = newsModelFromJson(value.data.toString());
-     // var s1 = newsModelToJson(value.data);
+      // var s1 = newsModelToJson(value.data);
       //print(s);
       //print(s1);
 
-
       //print(business[0]['title']);
-     // print(newsModelBusiness.toString());
+      // print(newsModelBusiness.toString());
 
       emit(NewsGetBusinessSuccessState());
-    }).catchError((error){
+    }).catchError((error) {
       print(error.toString());
       emit(NewsGetBusinessErrorState(error.toString()));
     });
   }
-
 }

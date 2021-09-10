@@ -1,11 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app_with_jemy/views/business/controllers/controllers.dart';
+import 'package:news_app_with_jemy/views/business/controllers/business_controller.dart';
+import 'package:news_app_with_jemy/views/health/controllers/health_controller.dart';
 import 'package:news_app_with_jemy/views/home/controllers/controllers.dart';
 import 'package:news_app_with_jemy/views/home/home_view.dart';
 import 'package:news_app_with_jemy/views/home/states/states.dart';
+import 'package:news_app_with_jemy/views/science/controllers/science_controller.dart';
 import 'package:news_app_with_jemy/views/splash/splash_screen.dart';
+import 'package:news_app_with_jemy/views/sports/controllers/sports_controller.dart';
 
 import 'core/utils/BlocObserver.dart';
 import 'core/remote/dio_helper.dart';
@@ -45,6 +48,15 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => BusinessCubit()..getBusiness(),
+        ),
+        BlocProvider(
+          create: (context) => HealthCubit()..getHealthNews(),
+        ),
+        BlocProvider(
+          create: (context) => ScienceCubit()..getScienceNews(),
+        ),
+        BlocProvider(
+          create: (context) => SportsCubit()..getSportsNews(),
         ),
       ],
       child: BlocConsumer<HomeAppCubit, HomeAppStates>(
