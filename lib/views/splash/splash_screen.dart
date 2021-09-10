@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:news_app_with_jemy/core/sharedHelper/shared_helper.dart';
 import 'package:news_app_with_jemy/core/utils/color.dart';
 
 import 'package:news_app_with_jemy/views/home/home_view.dart';
@@ -15,8 +16,14 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Timer(const Duration(milliseconds: 4000), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LayoutScreen()));
+      CacheHelper.saveData(
+        key: 'onBoarding',
+        value: true,
+      ).then((value) {
+        if (value) {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutScreen()));
+        }
+      });
     });
   }
 
