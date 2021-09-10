@@ -9,10 +9,10 @@ import 'package:news_app_with_jemy/views/home/states/states.dart';
 import 'package:news_app_with_jemy/views/science/science_screen.dart';
 import 'package:news_app_with_jemy/views/sports/sports_screen.dart';
 
-class AppCubit extends Cubit<AppStates>{
-  AppCubit() : super(InitialState());
+class HomeAppCubit extends Cubit<HomeAppStates>{
+  HomeAppCubit() : super(InitialState());
 
-  static AppCubit get(context) => BlocProvider.of(context);
+  static HomeAppCubit get(context) => BlocProvider.of(context);
 
   List<FloatingNavbarItem> items = [
     FloatingNavbarItem(title: 'Business',icon: Icons.attach_money),

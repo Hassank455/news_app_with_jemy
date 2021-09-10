@@ -1,5 +1,5 @@
-abstract class AppStates {}
+abstract class HomeAppStates {}
 
-class InitialState extends AppStates {}
+class InitialState extends HomeAppStates {}
 
-class NavBarChangerState extends AppStates {}
+class NavBarChangerState extends HomeAppStates {}
